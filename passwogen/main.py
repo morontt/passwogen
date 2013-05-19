@@ -16,7 +16,7 @@
 #
 import webapp2
 import os
-
+from password_generator import PasswordGenerator
 from google.appengine.ext.webapp import template
 
 
@@ -33,6 +33,8 @@ class MainHandler(webapp2.RequestHandler):
         self.response.out.write(template.render(path, template_variables))
 
     def post(self):
+
+        generator = PasswordGenerator(self.request.get('salt'), self.request.get('domain'))
 
         template_variables = {
             'result': True,
