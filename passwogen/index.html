@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Passwogen</title>
+</head>
+<body>
+    <form method="post">
+        <input type="text" name="salt" required="required"
+            {% if salt %}
+                value="{{ salt }}"
+            {% endif %}
+            placeholder="SALT"/>
+        <input type="text" name="domain" required="required"
+            {% if domain %}
+                value="{{ domain }}"
+            {% endif %}
+            placeholder="WEBSITE"/>
+        <input type="submit" value="Generate"/>
+    </form>
+    {% if result %}
+        <div>
+            Result: {{ salt }} {{ domain }}
+        </div>
+    {% endif %}
+</body>
+</html>
