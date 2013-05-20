@@ -38,8 +38,9 @@ class MainHandler(webapp2.RequestHandler):
 
         template_variables = {
             'result': True,
-            'salt': self.request.get('salt'),
-            'domain': self.request.get('domain'),
+            'salt': generator.salt,
+            'domain': generator.domain,
+            'password': generator.generate(),
         }
 
         path = os.path.join(os.path.dirname(__file__), 'index.html')
