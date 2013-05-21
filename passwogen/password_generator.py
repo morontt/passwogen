@@ -46,7 +46,7 @@ class PasswordGenerator:
 
         integer_hash = int(hashstring, 16)
         password = ''
-        for i in range(12):
+        for i in range(10):
             modulo = integer_hash % self.symbols_len
             password += self.symbols[modulo]
             integer_hash = (integer_hash - modulo) / self.symbols_len

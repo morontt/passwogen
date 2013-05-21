@@ -1,26 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Passwogen</title>
+    <meta charset="utf-8">
+    <title>Passwogen - Password Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="/media/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/media/css/style.css" rel="stylesheet" media="screen">
 </head>
 <body>
-    <form method="post">
-        <input type="text" name="salt" required="required"
-            {% if salt %}
-                value="{{ salt }}"
-            {% endif %}
-            placeholder="SALT"/>
-        <input type="text" name="domain" required="required"
-            {% if domain %}
-                value="{{ domain }}"
-            {% endif %}
-            placeholder="WEBSITE"/>
-        <input type="submit" value="Generate"/>
-    </form>
-    {% if result %}
-        <div>
-            Result: {{ password }}
-        </div>
-    {% endif %}
+    <div class="container">
+        <form method="post" class="form-gen">
+            <h2 class="form-gen-heading">Generate</h2>
+            <input type="text" name="salt" required="required" class="input-block-level"
+                {% if salt %}
+                    value="{{ salt }}"
+                {% endif %}
+                placeholder="SALT"/>
+            <input type="text" name="domain" required="required" class="input-block-level"
+                {% if domain %}
+                    value="{{ domain }}"
+                {% endif %}
+                placeholder="WEBSITE"/>
+            <button class="btn btn-large btn-success" type="submit">Go</button>
+        </form>
+
+        {% if result %}
+            <div>
+                Result: {{ password }}
+            </div>
+        {% endif %}
+    </div>
 </body>
 </html>
