@@ -2,8 +2,10 @@ body {
     padding-top: 40px;
     padding-bottom: 40px;
     background-color: #f5f5f5;
+    font-family: "Consolas","Lucida Console",monospace;
 }
-.form-gen {
+.form-gen,
+#result {
     max-width: 300px;
     padding: 19px 29px 29px;
     margin: 0 auto 20px;
@@ -24,4 +26,11 @@ body {
     height: auto;
     margin-bottom: 15px;
     padding: 7px 9px;
+}
+input, button {
+    font-family: "Consolas","Lucida Console",monospace;
+}
+#result span {
+    color: #06C;
+    font-size: 18px;
 }

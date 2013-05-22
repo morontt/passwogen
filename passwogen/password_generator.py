@@ -24,7 +24,7 @@ class PasswordGenerator:
         for i in xrange(ord('A'), ord('Z') + 1):
             self.symbols.append(chr(i))
 
-        for s in ['!', '%', '&', '@', '#', '$', '^', '*', '?', '_', '~', '+']:
+        for s in ['!', '@', '#', '$', '%', '&', '*', '?', '+', '_']:
             self.symbols.append(s)
 
     def generate(self):
@@ -65,7 +65,7 @@ class PasswordGenerator:
         if re.search(r'([A-Z])', password):
             strength += 1
 
-        if re.search(r'([!,%,&,@,#,$,^,*,?,_,~,+])', password):
+        if re.search(r'([!,@,#,$,%,&,*,?,+,_])', password):
             strength += 1
 
         return True if strength == 4 else False
