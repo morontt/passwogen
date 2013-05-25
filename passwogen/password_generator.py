@@ -7,8 +7,8 @@ import re
 class PasswordGenerator:
 
     def __init__(self, salt, domain):
-        self.salt = salt
-        self.domain = domain
+        self.salt = salt.encode('utf-8')
+        self.domain = domain.encode('utf-8')
         self.symbols = []
 
         self.init_symbols()
