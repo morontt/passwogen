@@ -13,7 +13,7 @@
     <div class="container">
         <form method="post" class="form-gen">
             <h2 class="form-gen-heading">Generate</h2>
-            <input type="text" name="salt" required="required" class="input-block-level"
+            <input type="text" name="salt" required="required" class="input-block-level" autocomplete="off"
                 {% if salt %}
                     value="{{ salt }}"
                 {% endif %}
